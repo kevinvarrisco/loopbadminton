@@ -1,0 +1,549 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Anton";
+  src: url("../assets/fonts/Anton-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/Montserrat.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/Montserrat.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/Montserrat.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+:root{
+    --color-primary: #00560e;
+    --color-secondary: #00b41d;
+    --color-accent: #ffd500;
+    --color-dark: rgb(18, 18, 18);
+    --color-light: rgb(230, 230, 230);
+
+    --fsz-s: 16px;
+    --fsz-m: 24px;
+    --fsz-l: 48px;
+    --fsz-xl: 64px;
+
+    --ff-1: "Anton";
+    --ff-2: "Montserrat";
+
+    --fw-light: 200;
+    --fw-medium: 600;
+    --fw-bold: 900;
+}
+
+
+/* NAVBAR */
+.nav-bar{
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+    padding: 0 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.logo{
+    font-size: 36px;
+    font-family: var(--ff-1);
+    color: white;
+}
+
+.nav{
+    display: inline-block;
+    margin: 0 1vw;
+}
+
+.nav a, .nav-cta{
+    text-decoration: none;
+    color: var(--color-light);
+    font-size: var(--fsz-s);
+    font-family: var(--ff-2);
+    font-weight: var(--fw-light);
+    text-shadow: 1px 1px 3px rgb(26, 26, 26);
+}
+
+.nav-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-cta{
+    padding: 10px 18px;
+    border: 1px solid var(--color-light);
+    border-radius: 18px;
+}
+
+.menu-btn{
+    display: none;
+}
+
+
+/* HERO */
+.hero{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 60px;
+    position: relative;
+}
+
+.hero-bg-img{
+    width: 100%;
+    height: 100%;
+    background-image: url(../assets/img/badminton\ background\ web.png);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+}
+
+.overlay{
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, var(--color-secondary), var(--color-dark));
+    position: absolute;
+    opacity: 70%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.hero-content{
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.heading{
+    color: var(--color-accent);
+    font-size: var(--fsz-xl);
+    font-family: var(--ff-1);
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 3px rgba(47, 47, 47, 0.605);
+    text-align: center;
+}
+
+.sub-heading{
+    color: var(--color-light);
+    font-size: var(--fsz-m);
+    font-family: var(--ff-2);
+    font-weight: var(--fw-light);
+    text-shadow: 1px 1px 3px rgba(47, 47, 47, 0.605);
+    text-align: center;
+    letter-spacing: 0.5px;
+    margin-top: 30px;
+}
+
+.hero-cta{
+    text-decoration: none;
+    color: var(--color-dark);
+    font-size: var(--fsz-s);
+    font-family: var(--ff-2);
+    font-weight: var(--fw-medium);
+    padding: 10px 18px;
+    background-color: var(--color-accent);
+    border-radius: 18px;
+    margin-top: 30px;
+}
+
+
+/* SCHEDULE */
+.schedule{
+    width: 100%;
+    background-color: var(--color-light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.schedule-heading{
+    color: var(--color-primary);
+    font-family: var(--ff-1);
+    font-size: var(--fsz-l);
+    margin-top: 60px;
+}
+
+.schedule-content{
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.schedule-card{
+    min-width: 200px;
+    width: 20vw;
+    background-color: var(--color-light);
+    border-radius: 20px;
+    box-shadow: 1px 0px 10px rgba(133, 133, 133, 0.553);
+    padding: 3%;
+    margin-left: 15px;
+    margin-right: 15px;    
+    margin-bottom: 90px;
+}
+
+.schedule-card-img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.schedule-day{
+    color: var(--color-primary);
+    font-family: var(--ff-2);
+    font-weight: var(--fw-bold);
+    font-size: var(--fsz-m);
+    margin-top: 20px;
+}
+
+.schedule-time, .schedule-court{
+    color: var(--color-dark);
+    font-family: var(--ff-2);
+    font-weight: var(--fw-medium);
+    font-size: var(--fsz-s);
+    margin-top: 10px;
+}
+
+.schedule-place{
+    margin-top: 10px;
+}
+
+.schedule-place a{
+    text-decoration: none;
+    color: var(--color-dark);
+    font-family: var(--ff-2);
+    font-weight: var(--fw-bold);
+    font-size: var(--fsz-s);
+}
+
+.schedule-card-icons{
+    width: var(--fsz-s);
+    margin-right: 10px;
+}
+
+.schedule-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 35px;
+    text-decoration: none;
+    color: var(--color-light);
+    font-family: var(--ff-2);
+    font-weight: var(--fw-medium);
+    font-size: var(--fsz-s);
+    background-color: var(--color-primary);
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+
+/* ABOUT */
+.about{
+    width: 100%;
+    background-color: var(--color-light);
+    padding: 0 60px;
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-heading{
+    color: var(--color-primary);
+    font-family: var(--ff-1);
+    font-size: var(--fsz-l);
+    text-align: center;
+}
+
+.about-main-content{
+    position: relative;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.about-main-img{
+    width: 450px;
+    border-radius: 15px;
+}
+
+.about-main-paragraph{
+    width: 450px;
+    color: var(--color-dark);
+    font-family: var(--ff-2);
+    font-weight: var(--fw-light);
+    font-size: var(--fsz-s);
+    text-align: justify;
+    letter-spacing: 0.5px;
+    line-height: var(--fsz-m);
+}
+
+.about-contact{
+    position: absolute;
+    bottom: -60px;
+    right: 0;
+    width: 450px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-wrap{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact-icons img{
+    width: 30px;
+}
+
+.about-btn{
+    text-decoration: none;
+    color: var(--color-light);
+    font-size: var(--fsz-s);
+    font-family: var(--ff-2);
+    font-weight: var(--fw-medium);
+    padding: 10px 18px;
+    background-color: var(--color-primary);
+    border-radius: 18px;
+}
+
+
+/* FAQ */
+.faq{
+    margin-top: 120px;
+    padding: 0 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.faq-heading{
+    color: var(--color-primary);
+    font-family: var(--ff-1);
+    font-size: var(--fsz-l);
+    text-align: center;
+}
+
+.faq-content-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    gap: 120px;
+    margin-bottom: 60px;
+}
+
+.faq-logo{
+    width: 250px;
+    height: 300px;
+}
+
+.faq-bullet{
+    width: 30px;
+    margin-right: 30px;
+}
+
+.faq-list{    
+    margin-bottom: 15px;
+}
+
+.faq-ques{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 30px;
+    box-shadow: 1px 1px 10px rgba(99, 99, 99, 0.729);
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.faq-ques-text{
+    width: 30vw;
+    color: var(--color-dark);
+    font-size: var(--fsz-s);
+    font-family: var(--ff-2);
+    font-weight: var(--fw-bold);
+    line-height: var(--fsz-m);
+}
+
+.faq-drop-icon{
+    width: 30px;
+    margin-left: 30px;
+}
+
+.faq-ans{
+    display: none;
+}
+
+
+/* FOOTER */
+.footer{
+    width: 100%;
+    height: 300px;
+    background-color: var(--color-dark);
+}
+
+
+
+@media only screen and (max-width:1150px){
+    .about-main-content{
+        flex-direction: column;
+    }
+
+    .about-main-content{
+        align-items: center;
+    }
+
+    .about-main-img, .about-main-paragraph, .about-contact{
+        width: 90%;
+    }
+
+    .about-contact{
+        position: relative;
+        bottom: 0;
+    }
+
+    .faq{
+        margin-top: 60px;
+    }
+
+    .faq-content-container{
+        gap: 60px;
+    }
+
+    .faq-logo{
+        width: 200px;
+        height: 240px;
+    }
+}
+
+
+@media only screen and (max-width:768px){
+    :root{
+        --fsz-s: 14px;
+        --fsz-m: 20px;
+        --fsz-l: 36px;
+        --fsz-xl: 48px;
+    }
+
+    .nav-bar, .hero{
+        padding: 0 45px;
+    }
+
+    .nav-wrap{
+        display: none;
+    }
+
+    .menu-btn{
+        display: block;
+        width: 30px;
+        height: 30px;
+        margin-left: 20px;
+        cursor: pointer;
+    }
+
+    .about{
+        padding: 0 45px;
+    }
+
+    .about-main-img, .about-main-paragraph, .about-contact{
+        width: 100%;
+    }
+
+    .faq{
+        padding: 0 45px;
+    }
+
+    .faq-content-container{
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .faq-ques-text{
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width:480px){
+    :root{
+        --fsz-s: 14px;
+        --fsz-m: 18px;
+        --fsz-l: 32px;
+        --fsz-xl: 48px;
+    }
+
+    .nav-bar, .hero{
+        padding: 0 30px;
+    }
+
+    .schedule{
+        padding: 0 30px;
+    }
+
+    .schedule-card{
+        max-width: 250px;
+        padding: 25px;
+        width: 100%;
+    }
+
+    .about{
+        padding: 0 30px;
+    }
+
+    .contact-wrap{
+        gap: 10px;
+    }
+
+    .contact-icons img{
+        width: 25px;
+    }
+
+    .faq{
+        padding: 0 30px;
+    }
+
+    .faq-ques{
+        padding: 10px 15px;
+    }
+
+    .faq-bullet{
+        margin-right: 15px;
+    }
+
+    .faq-drop-icon{
+        margin-left: 15px;
+    }
+}
